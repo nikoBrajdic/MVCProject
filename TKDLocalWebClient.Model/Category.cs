@@ -8,8 +8,11 @@ namespace TKDLocalWebClient.Model
     {
         [Key]
         public int ID { get; set; }
+        [Required, RegularExpression(@"^[\w ]+$")]
         public string Name { get; set; }
+        [Required, RegularExpression(@"^\w+$")]
         public string ShortName { get; set; }
+        [Required]
         public bool IsFreestyle { get; set; }
         public int CurrentRound { get; set; }
 

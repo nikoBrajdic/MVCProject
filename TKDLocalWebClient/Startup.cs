@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using TKDLocalWebClient.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TKDLocalWebClient.DAL;
 
 namespace TKDLocalWebClient
 {
@@ -34,9 +35,9 @@ namespace TKDLocalWebClient
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<TKDManagerDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    Configuration.GetConnectionString("TKDManagerDbContext")));
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 

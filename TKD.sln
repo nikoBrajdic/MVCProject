@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TKDLocalWebClient.Web", "TK
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TKDLocalWebClient.Model", "TKDLocalWebClient.Model\TKDLocalWebClient.Model.csproj", "{81761D7C-9369-4582-B68D-53986AF76835}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TKDLocalWebClient.DAL", "TKDLocalWebClient.DAL\TKDLocalWebClient.DAL.csproj", "{80A8CF27-B0EB-4C17-BA22-8D4ED1DEB809}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{81761D7C-9369-4582-B68D-53986AF76835}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81761D7C-9369-4582-B68D-53986AF76835}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81761D7C-9369-4582-B68D-53986AF76835}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80A8CF27-B0EB-4C17-BA22-8D4ED1DEB809}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80A8CF27-B0EB-4C17-BA22-8D4ED1DEB809}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80A8CF27-B0EB-4C17-BA22-8D4ED1DEB809}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80A8CF27-B0EB-4C17-BA22-8D4ED1DEB809}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
