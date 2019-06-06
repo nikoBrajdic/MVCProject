@@ -13,7 +13,10 @@ namespace TKDLocalWebClient.Model
 
         [ForeignKey(nameof(Team))]
         public int? TeamId { get; set; }
-        public Team Team { get; set; }
-        public virtual ICollection<Category> Categories { get; set; }
+        public virtual Team Team { get; set; }
+
+        [ForeignKey(nameof(Category))]
+        public int? CategoryId { get; set; }
+        public virtual Category Category { get; set; }
     }
 }

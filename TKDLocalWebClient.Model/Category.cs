@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TKDLocalWebClient.Model
 {
@@ -9,15 +10,32 @@ namespace TKDLocalWebClient.Model
         public int ID { get; set; }
         public string Name { get; set; }
         public string ShortName { get; set; }
+        public bool IsFreestyle { get; set; }
+        public int CurrentRound { get; set; }
 
-        public int? Poomsae1ID { get; set; }
-        public Poomsae Poomsae1 { get; set; }
+        [ForeignKey(nameof(Poomsae))]
+        public int Poomsae11ID { get; set; }
+        public virtual Poomsae Poomsae11 { get; set; }
 
-        public int? Poomsae2ID { get; set; }
-        public Poomsae Poomsae2 { get; set; }
+        [ForeignKey(nameof(Poomsae))]
+        public int Poomsae12ID { get; set; }
+        public virtual Poomsae Poomsae12 { get; set; }
 
-        public int? Poomsae3ID { get; set; }
-        public Poomsae Poomsae3 { get; set; }
+        [ForeignKey(nameof(Poomsae))]
+        public int Poomsae21ID { get; set; }
+        public virtual Poomsae Poomsae21 { get; set; }
+
+        [ForeignKey(nameof(Poomsae))]
+        public int Poomsae22ID { get; set; }
+        public virtual Poomsae Poomsae22 { get; set; }
+
+        [ForeignKey(nameof(Poomsae))]
+        public int Poomsae31ID { get; set; }
+        public virtual Poomsae Poomsae31 { get; set; }
+
+        [ForeignKey(nameof(Poomsae))]
+        public int Poomsae32ID { get; set; }
+        public virtual Poomsae Poomsae32 { get; set; }
 
         public virtual ICollection<Contestant> Contestants { get; set; }
     }
