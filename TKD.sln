@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TKDLocalWebClient", "TKDLocalWebClient\TKDLocalWebClient.csproj", "{461575FA-0EBF-4AEC-9E4F-F41A3819D9C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TKDLocalWebClient.Web", "TKDLocalWebClient\TKDLocalWebClient.Web.csproj", "{461575FA-0EBF-4AEC-9E4F-F41A3819D9C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TKDLocalWebClient.Model", "TKDLocalWebClient.Model\TKDLocalWebClient.Model.csproj", "{81761D7C-9369-4582-B68D-53986AF76835}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{461575FA-0EBF-4AEC-9E4F-F41A3819D9C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{461575FA-0EBF-4AEC-9E4F-F41A3819D9C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{461575FA-0EBF-4AEC-9E4F-F41A3819D9C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81761D7C-9369-4582-B68D-53986AF76835}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81761D7C-9369-4582-B68D-53986AF76835}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81761D7C-9369-4582-B68D-53986AF76835}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81761D7C-9369-4582-B68D-53986AF76835}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
