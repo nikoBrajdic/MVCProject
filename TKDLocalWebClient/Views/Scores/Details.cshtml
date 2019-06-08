@@ -1,0 +1,187 @@
+﻿@model TKDLocalWebClient.Model.Score
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Score</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Round)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Round)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Index)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Index)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MinorMean)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MinorMean)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MinorTotal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MinorTotal)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.GrandTotal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GrandTotal)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AccuracyMinorTotal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AccuracyMinorTotal)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PresentationMinorTotal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PresentationMinorTotal)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AccuracyGrandTotal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AccuracyGrandTotal)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PresentationGrandTotal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PresentationGrandTotal)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Presentation1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Presentation1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Presentation2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Presentation2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Presentation3)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Presentation3)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Presentation4)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Presentation4)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Presentation5)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Presentation5)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Presentation6)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Presentation6)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Presentation7)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Presentation7)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Presentation8)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Presentation8)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Presentation9)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Presentation9)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Accuracy1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Accuracy1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Accuracy2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Accuracy2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Accuracy3)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Accuracy3)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Accuracy4)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Accuracy4)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Accuracy5)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Accuracy5)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Accuracy6)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Accuracy6)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Accuracy7)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Accuracy7)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Accuracy8)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Accuracy8)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Accuracy9)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Accuracy9)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Contestant)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Contestant.Name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

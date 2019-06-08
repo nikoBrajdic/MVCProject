@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -14,7 +13,6 @@ namespace TKDLocalWebClient.Web.Controllers
     public class ContestantsController : Controller
     {
         private readonly TKDManagerDbContext Context;
-        private UserManager<IdentityUser> UserManager;
 
         public ContestantsController(TKDManagerDbContext Context)
         {
@@ -61,7 +59,7 @@ namespace TKDLocalWebClient.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name,Surname,TeamId,CategoryId")] Contestant contestant)
+        public async Task<IActionResult> Create([Bind("ID,Name,Surname,TrackPath,TeamId,CategoryId")] Contestant contestant)
         {
             if (ModelState.IsValid)
             {
@@ -97,7 +95,7 @@ namespace TKDLocalWebClient.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Surname,TeamId,CategoryId")] Contestant contestant)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Surname,TrackPath,TeamId,CategoryId")] Contestant contestant)
         {
             if (id != contestant.ID)
             {

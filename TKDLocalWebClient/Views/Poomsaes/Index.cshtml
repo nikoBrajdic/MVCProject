@@ -1,4 +1,4 @@
-﻿@model IEnumerable<TKDLocalWebClient.Model.Contestant>
+﻿@model IEnumerable<TKDLocalWebClient.Model.Poomsae>
 
 @{
     ViewData["Title"] = "Index";
@@ -17,16 +17,13 @@
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Surname)
+                @Html.DisplayNameFor(model => model.ShortName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TrackPath)
+                @Html.DisplayNameFor(model => model.Ordinal)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Team)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Category)
+                @Html.DisplayNameFor(model => model.PoomsaeType)
             </th>
             <th></th>
         </tr>
@@ -38,16 +35,13 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Surname)
+                @Html.DisplayFor(modelItem => item.ShortName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TrackPath)
+                @Html.DisplayFor(modelItem => item.Ordinal)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Team.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category.Name)
+                @Html.DisplayFor(modelItem => item.PoomsaeType)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |

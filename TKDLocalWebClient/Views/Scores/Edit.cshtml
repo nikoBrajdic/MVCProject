@@ -1,0 +1,170 @@
+﻿@model TKDLocalWebClient.Model.Score
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<h4>Score</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="Round" class="control-label"></label>
+                <input asp-for="Round" class="form-control" />
+                <span asp-validation-for="Round" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Index" class="control-label"></label>
+                <input asp-for="Index" class="form-control" />
+                <span asp-validation-for="Index" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MinorMean" class="control-label"></label>
+                <input asp-for="MinorMean" class="form-control" />
+                <span asp-validation-for="MinorMean" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MinorTotal" class="control-label"></label>
+                <input asp-for="MinorTotal" class="form-control" />
+                <span asp-validation-for="MinorTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GrandTotal" class="control-label"></label>
+                <input asp-for="GrandTotal" class="form-control" />
+                <span asp-validation-for="GrandTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccuracyMinorTotal" class="control-label"></label>
+                <input asp-for="AccuracyMinorTotal" class="form-control" />
+                <span asp-validation-for="AccuracyMinorTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PresentationMinorTotal" class="control-label"></label>
+                <input asp-for="PresentationMinorTotal" class="form-control" />
+                <span asp-validation-for="PresentationMinorTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccuracyGrandTotal" class="control-label"></label>
+                <input asp-for="AccuracyGrandTotal" class="form-control" />
+                <span asp-validation-for="AccuracyGrandTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PresentationGrandTotal" class="control-label"></label>
+                <input asp-for="PresentationGrandTotal" class="form-control" />
+                <span asp-validation-for="PresentationGrandTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Presentation1" class="control-label"></label>
+                <input asp-for="Presentation1" class="form-control" />
+                <span asp-validation-for="Presentation1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Presentation2" class="control-label"></label>
+                <input asp-for="Presentation2" class="form-control" />
+                <span asp-validation-for="Presentation2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Presentation3" class="control-label"></label>
+                <input asp-for="Presentation3" class="form-control" />
+                <span asp-validation-for="Presentation3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Presentation4" class="control-label"></label>
+                <input asp-for="Presentation4" class="form-control" />
+                <span asp-validation-for="Presentation4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Presentation5" class="control-label"></label>
+                <input asp-for="Presentation5" class="form-control" />
+                <span asp-validation-for="Presentation5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Presentation6" class="control-label"></label>
+                <input asp-for="Presentation6" class="form-control" />
+                <span asp-validation-for="Presentation6" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Presentation7" class="control-label"></label>
+                <input asp-for="Presentation7" class="form-control" />
+                <span asp-validation-for="Presentation7" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Presentation8" class="control-label"></label>
+                <input asp-for="Presentation8" class="form-control" />
+                <span asp-validation-for="Presentation8" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Presentation9" class="control-label"></label>
+                <input asp-for="Presentation9" class="form-control" />
+                <span asp-validation-for="Presentation9" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Accuracy1" class="control-label"></label>
+                <input asp-for="Accuracy1" class="form-control" />
+                <span asp-validation-for="Accuracy1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Accuracy2" class="control-label"></label>
+                <input asp-for="Accuracy2" class="form-control" />
+                <span asp-validation-for="Accuracy2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Accuracy3" class="control-label"></label>
+                <input asp-for="Accuracy3" class="form-control" />
+                <span asp-validation-for="Accuracy3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Accuracy4" class="control-label"></label>
+                <input asp-for="Accuracy4" class="form-control" />
+                <span asp-validation-for="Accuracy4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Accuracy5" class="control-label"></label>
+                <input asp-for="Accuracy5" class="form-control" />
+                <span asp-validation-for="Accuracy5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Accuracy6" class="control-label"></label>
+                <input asp-for="Accuracy6" class="form-control" />
+                <span asp-validation-for="Accuracy6" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Accuracy7" class="control-label"></label>
+                <input asp-for="Accuracy7" class="form-control" />
+                <span asp-validation-for="Accuracy7" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Accuracy8" class="control-label"></label>
+                <input asp-for="Accuracy8" class="form-control" />
+                <span asp-validation-for="Accuracy8" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Accuracy9" class="control-label"></label>
+                <input asp-for="Accuracy9" class="form-control" />
+                <span asp-validation-for="Accuracy9" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContestantId" class="control-label"></label>
+                <select asp-for="ContestantId" class="form-control" asp-items="ViewBag.ContestantId"></select>
+                <span asp-validation-for="ContestantId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

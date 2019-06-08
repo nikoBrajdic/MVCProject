@@ -8,9 +8,9 @@ namespace TKDLocalWebClient.Model
     {
         [Key]
         public int ID { get; set; }
-        [Required, RegularExpression(@"^[\w\- ]$")]
+        [Required, RegularExpression(@"^[\w\- ]+$")]
         public string Name { get; set; }
-        [Required, RegularExpression(@"^[\w\-]$")]
+        [Required, RegularExpression(@"^[\w\-]+$")]
         public string ShortName { get; set; }
         [Required, RegularExpression(@"^\d{1,2}$")]
         public string Ordinal { get; set; }

@@ -1,0 +1,75 @@
+﻿@model TKDLocalWebClient.Model.Category
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<h4>Category</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShortName" class="control-label"></label>
+                <input asp-for="ShortName" class="form-control" />
+                <span asp-validation-for="ShortName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="IsFreestyle" /> @Html.DisplayNameFor(model => model.IsFreestyle)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="CurrentRound" class="control-label"></label>
+                <input asp-for="CurrentRound" class="form-control" />
+                <span asp-validation-for="CurrentRound" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Poomsae11ID" class="control-label"></label>
+                <select asp-for="Poomsae11ID" class ="form-control" asp-items="ViewBag.Poomsae11ID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Poomsae12ID" class="control-label"></label>
+                <select asp-for="Poomsae12ID" class ="form-control" asp-items="ViewBag.Poomsae12ID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Poomsae21ID" class="control-label"></label>
+                <select asp-for="Poomsae21ID" class ="form-control" asp-items="ViewBag.Poomsae21ID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Poomsae22ID" class="control-label"></label>
+                <select asp-for="Poomsae22ID" class ="form-control" asp-items="ViewBag.Poomsae22ID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Poomsae31ID" class="control-label"></label>
+                <select asp-for="Poomsae31ID" class ="form-control" asp-items="ViewBag.Poomsae31ID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Poomsae32ID" class="control-label"></label>
+                <select asp-for="Poomsae32ID" class ="form-control" asp-items="ViewBag.Poomsae32ID"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

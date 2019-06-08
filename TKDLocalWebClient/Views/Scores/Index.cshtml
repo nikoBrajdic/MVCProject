@@ -1,0 +1,198 @@
+﻿@model IEnumerable<TKDLocalWebClient.Model.Score>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Round)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Index)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MinorMean)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MinorTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrandTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccuracyMinorTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PresentationMinorTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccuracyGrandTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PresentationGrandTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Presentation1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Presentation2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Presentation3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Presentation4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Presentation5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Presentation6)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Presentation7)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Presentation8)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Presentation9)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Accuracy1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Accuracy2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Accuracy3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Accuracy4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Accuracy5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Accuracy6)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Accuracy7)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Accuracy8)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Accuracy9)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contestant)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Round)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Index)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinorMean)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinorTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GrandTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccuracyMinorTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PresentationMinorTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccuracyGrandTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PresentationGrandTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Presentation1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Presentation2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Presentation3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Presentation4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Presentation5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Presentation6)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Presentation7)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Presentation8)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Presentation9)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Accuracy1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Accuracy2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Accuracy3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Accuracy4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Accuracy5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Accuracy6)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Accuracy7)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Accuracy8)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Accuracy9)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contestant.Name)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

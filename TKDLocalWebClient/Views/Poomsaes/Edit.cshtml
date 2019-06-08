@@ -1,4 +1,4 @@
-﻿@model TKDLocalWebClient.Model.Contestant
+﻿@model TKDLocalWebClient.Model.Poomsae
 
 @{
     ViewData["Title"] = "Edit";
@@ -7,7 +7,7 @@
 
 <h2>Edit</h2>
 
-<h4>Contestant</h4>
+<h4>Poomsae</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -20,24 +20,24 @@
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Surname" class="control-label"></label>
-                <input asp-for="Surname" class="form-control" />
-                <span asp-validation-for="Surname" class="text-danger"></span>
+                <label asp-for="ShortName" class="control-label"></label>
+                <input asp-for="ShortName" class="form-control" />
+                <span asp-validation-for="ShortName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TrackPath" class="control-label"></label>
-                <input asp-for="TrackPath" class="form-control" />
-                <span asp-validation-for="TrackPath" class="text-danger"></span>
+                <label asp-for="Ordinal" class="control-label"></label>
+                <input asp-for="Ordinal" class="form-control" />
+                <span asp-validation-for="Ordinal" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TeamId" class="control-label"></label>
-                <select asp-for="TeamId" class="form-control" asp-items="ViewBag.TeamId"></select>
-                <span asp-validation-for="TeamId" class="text-danger"></span>
+                <label asp-for="PoomsaeTypeId" class="control-label"></label>
+                <select asp-for="PoomsaeTypeId" class="form-control" asp-items="ViewBag.PoomsaeTypeId"></select>
+                <span asp-validation-for="PoomsaeTypeId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CategoryId" class="control-label"></label>
-                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
-                <span asp-validation-for="CategoryId" class="text-danger"></span>
+                <label asp-for="PoomsaeType" class="control-label"></label>
+                <input asp-for="PoomsaeType" class="form-control" />
+                <span asp-validation-for="PoomsaeType" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />

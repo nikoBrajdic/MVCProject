@@ -7,7 +7,7 @@ namespace TKDLocalWebClient.Model
     {
         [Key]
         public int ID { get; set; }
-        [Required, RegularExpression(@"^[\w\- ]$")]
+        [Required, RegularExpression(@"^[\w\- ]+$", ErrorMessage = "Name must only contain letters, numbers, whitespaces, -, and _")]
         public string Name { get; set; }
 
         public virtual ICollection<Contestant> Contestants { get; set; }

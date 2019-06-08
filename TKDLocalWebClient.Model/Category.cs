@@ -10,7 +10,7 @@ namespace TKDLocalWebClient.Model
         public int ID { get; set; }
         [Required]
         public string Name { get; set; }
-        [Required, RegularExpression(@"^[\w\-]+$")]
+        [Required, RegularExpression(@"^[\w\-]+$", ErrorMessage = "Name must only contain letters, numbers, -, and _")]
         public string ShortName { get; set; }
         [Required]
         public bool IsFreestyle { get; set; }
