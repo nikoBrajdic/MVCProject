@@ -18,7 +18,7 @@ namespace TKDLocalWebClient.Model
 
         [ForeignKey(nameof(PoomsaeType))]
         public int PoomsaeTypeId { get; set; }
-        public string PoomsaeType { get; set; }
+        public PoomsaeType PoomsaeType { get; set; }
 
         public virtual ICollection<Category> Categories { get; set; }
 

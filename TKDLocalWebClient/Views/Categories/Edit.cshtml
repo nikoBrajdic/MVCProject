@@ -12,63 +12,7 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="ID" />
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ShortName" class="control-label"></label>
-                <input asp-for="ShortName" class="form-control" />
-                <span asp-validation-for="ShortName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <div class="checkbox">
-                    <label>
-                        <input asp-for="IsFreestyle" /> @Html.DisplayNameFor(model => model.IsFreestyle)
-                    </label>
-                </div>
-            </div>
-            <div class="form-group">
-                <label asp-for="CurrentRound" class="control-label"></label>
-                <input asp-for="CurrentRound" class="form-control" />
-                <span asp-validation-for="CurrentRound" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Poomsae11ID" class="control-label"></label>
-                <select asp-for="Poomsae11ID" class="form-control" asp-items="ViewBag.Poomsae11ID"></select>
-                <span asp-validation-for="Poomsae11ID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Poomsae12ID" class="control-label"></label>
-                <select asp-for="Poomsae12ID" class="form-control" asp-items="ViewBag.Poomsae12ID"></select>
-                <span asp-validation-for="Poomsae12ID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Poomsae21ID" class="control-label"></label>
-                <select asp-for="Poomsae21ID" class="form-control" asp-items="ViewBag.Poomsae21ID"></select>
-                <span asp-validation-for="Poomsae21ID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Poomsae22ID" class="control-label"></label>
-                <select asp-for="Poomsae22ID" class="form-control" asp-items="ViewBag.Poomsae22ID"></select>
-                <span asp-validation-for="Poomsae22ID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Poomsae31ID" class="control-label"></label>
-                <select asp-for="Poomsae31ID" class="form-control" asp-items="ViewBag.Poomsae31ID"></select>
-                <span asp-validation-for="Poomsae31ID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Poomsae32ID" class="control-label"></label>
-                <select asp-for="Poomsae32ID" class="form-control" asp-items="ViewBag.Poomsae32ID"></select>
-                <span asp-validation-for="Poomsae32ID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
+            <partial name="CreateOrEdit" />
         </form>
     </div>
 </div>

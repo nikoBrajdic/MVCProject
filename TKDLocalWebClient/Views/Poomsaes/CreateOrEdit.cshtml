@@ -1,0 +1,27 @@
+﻿@model TKDLocalWebClient.Model.Poomsae
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<input type="hidden" asp-for="ID" />
+<div class="form-group">
+    <label asp-for="Name" class="control-label"></label>
+    <input asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="ShortName" class="control-label">Short name</label>
+    <input asp-for="ShortName" class="form-control" />
+    <span asp-validation-for="ShortName" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Ordinal" class="control-label"></label>
+    <input asp-for="Ordinal" class="form-control" />
+    <span asp-validation-for="Ordinal" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="PoomsaeTypeId" class="control-label">Poomsae type</label>
+    <select asp-for="PoomsaeTypeId" class="form-control" asp-items="ViewBag.PoomsaeTypeId"></select>
+    <span asp-validation-for="PoomsaeTypeId" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <input type="submit" value="Save" class="btn btn-default" />
+</div>

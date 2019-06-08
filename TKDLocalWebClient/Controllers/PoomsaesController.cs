@@ -54,7 +54,7 @@ namespace TKDLocalWebClient.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name,ShortName,Ordinal,PoomsaeTypeId,PoomsaeType")] Poomsae poomsae)
+        public async Task<IActionResult> Create([Bind("ID,Name,ShortName,Ordinal,PoomsaeTypeId")] Poomsae poomsae)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace TKDLocalWebClient.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,ShortName,Ordinal,PoomsaeTypeId,PoomsaeType")] Poomsae poomsae)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,ShortName,Ordinal,PoomsaeTypeId")] Poomsae poomsae)
         {
             if (id != poomsae.ID)
             {
