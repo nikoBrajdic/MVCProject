@@ -15,4 +15,8 @@
     <ProjectReference Include="..\TKDLocalWebClient.DAL\TKDLocalWebClient.DAL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+
 </Project>

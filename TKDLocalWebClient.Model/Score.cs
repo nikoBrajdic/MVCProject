@@ -10,14 +10,23 @@ namespace TKDLocalWebClient.Model
     {
         [Key]
         public int ID { get; set; }
+        [Required]
         public int Round { get; set; }
+        [Required]
         public int Index { get; set; }
+        [Required]
         public double MinorMean { get; set; }
+        [Required]
         public double MinorTotal { get; set; }
+        [Required]
         public double GrandTotal { get; set; }
+        [Required]
         public double AccuracyMinorTotal { get; set; }
+        [Required]
         public double PresentationMinorTotal { get; set; }
+        [Required]
         public double AccuracyGrandTotal { get; set; }
+        [Required]
         public double PresentationGrandTotal { get; set; }
 
         public double Presentation1 { get; set; }
