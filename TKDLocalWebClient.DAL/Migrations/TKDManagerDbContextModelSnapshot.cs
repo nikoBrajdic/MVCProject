@@ -197,17 +197,19 @@ namespace TKDLocalWebClient.DAL.Migrations
                     b.Property<string>("Name")
                         .IsRequired();
 
-                    b.Property<int>("Poomsae11ID");
+                    b.Property<int?>("Poomsae11ID");
 
-                    b.Property<int>("Poomsae12ID");
+                    b.Property<int?>("Poomsae12ID");
 
-                    b.Property<int>("Poomsae21ID");
+                    b.Property<int?>("Poomsae21ID");
 
-                    b.Property<int>("Poomsae22ID");
+                    b.Property<int?>("Poomsae22ID");
 
-                    b.Property<int>("Poomsae31ID");
+                    b.Property<int?>("Poomsae31ID");
 
-                    b.Property<int>("Poomsae32ID");
+                    b.Property<int?>("Poomsae32ID");
+
+                    b.Property<int?>("PoomsaeID");
 
                     b.Property<string>("ShortName")
                         .IsRequired();
@@ -226,23 +228,25 @@ namespace TKDLocalWebClient.DAL.Migrations
 
                     b.HasIndex("Poomsae32ID");
 
+                    b.HasIndex("PoomsaeID");
+
                     b.ToTable("Categories");
 
                     b.HasData(
-                        new { ID = 1, IsFreestyle = false, Name = "Kadeti | <=5. geup | do 13 godina", Poomsae11ID = 0, Poomsae12ID = 0, Poomsae21ID = 0, Poomsae22ID = 0, Poomsae31ID = 0, Poomsae32ID = 0, ShortName = "KA-1" },
-                        new { ID = 2, IsFreestyle = false, Name = "Kadetkinje | <=5. geup | do 13 godina", Poomsae11ID = 0, Poomsae12ID = 0, Poomsae21ID = 0, Poomsae22ID = 0, Poomsae31ID = 0, Poomsae32ID = 0, ShortName = "KB-1" },
-                        new { ID = 3, IsFreestyle = false, Name = "Juniori | <=5. geup | 13 do 17 godina", Poomsae11ID = 0, Poomsae12ID = 0, Poomsae21ID = 0, Poomsae22ID = 0, Poomsae31ID = 0, Poomsae32ID = 0, ShortName = "JA-1" },
-                        new { ID = 4, IsFreestyle = false, Name = "Juniorke | <=5. geup | 13 do 17 godina", Poomsae11ID = 0, Poomsae12ID = 0, Poomsae21ID = 0, Poomsae22ID = 0, Poomsae31ID = 0, Poomsae32ID = 0, ShortName = "JB-1" },
-                        new { ID = 5, IsFreestyle = false, Name = "Seniori | <=5. geup | 18 do 30 godina", Poomsae11ID = 0, Poomsae12ID = 0, Poomsae21ID = 0, Poomsae22ID = 0, Poomsae31ID = 0, Poomsae32ID = 0, ShortName = "SA-1" },
-                        new { ID = 6, IsFreestyle = false, Name = "Seniorke | <=5. geup | 18 do 30 godina", Poomsae11ID = 0, Poomsae12ID = 0, Poomsae21ID = 0, Poomsae22ID = 0, Poomsae31ID = 0, Poomsae32ID = 0, ShortName = "SB-1" },
-                        new { ID = 7, IsFreestyle = false, Name = "Veterani | <=5. geup | od 30 godina", Poomsae11ID = 0, Poomsae12ID = 0, Poomsae21ID = 0, Poomsae22ID = 0, Poomsae31ID = 0, Poomsae32ID = 0, ShortName = "MA-1" },
-                        new { ID = 8, IsFreestyle = false, Name = "Veteranke | <=5. geup | od 30 godina", Poomsae11ID = 0, Poomsae12ID = 0, Poomsae21ID = 0, Poomsae22ID = 0, Poomsae31ID = 0, Poomsae32ID = 0, ShortName = "MB-1" },
-                        new { ID = 9, IsFreestyle = false, Name = "Invalidi M | Kognitivni invaliditet", Poomsae11ID = 0, Poomsae12ID = 0, Poomsae21ID = 0, Poomsae22ID = 0, Poomsae31ID = 0, Poomsae32ID = 0, ShortName = "PA-1" },
-                        new { ID = 10, IsFreestyle = false, Name = "Invalidi Ž | Kognitivni invaliditet", Poomsae11ID = 0, Poomsae12ID = 0, Poomsae21ID = 0, Poomsae22ID = 0, Poomsae31ID = 0, Poomsae32ID = 0, ShortName = "PB-1" },
-                        new { ID = 11, IsFreestyle = false, Name = "Parovi | <=5. geup", Poomsae11ID = 0, Poomsae12ID = 0, Poomsae21ID = 0, Poomsae22ID = 0, Poomsae31ID = 0, Poomsae32ID = 0, ShortName = "D-1" },
-                        new { ID = 12, IsFreestyle = false, Name = "Timovi | <=5. geup", Poomsae11ID = 0, Poomsae12ID = 0, Poomsae21ID = 0, Poomsae22ID = 0, Poomsae31ID = 0, Poomsae32ID = 0, ShortName = "T-1" },
-                        new { ID = 13, IsFreestyle = true, Name = "Freestyle M | <=5. geup", Poomsae11ID = 0, Poomsae12ID = 0, Poomsae21ID = 0, Poomsae22ID = 0, Poomsae31ID = 0, Poomsae32ID = 0, ShortName = "FA-1" },
-                        new { ID = 14, IsFreestyle = true, Name = "Freestyle Ž | <=5. geup", Poomsae11ID = 0, Poomsae12ID = 0, Poomsae21ID = 0, Poomsae22ID = 0, Poomsae31ID = 0, Poomsae32ID = 0, ShortName = "FB-1" }
+                        new { ID = 1, IsFreestyle = false, Name = "Kadeti | <=5. geup | do 13 godina", ShortName = "KA-1" },
+                        new { ID = 2, IsFreestyle = false, Name = "Kadetkinje | <=5. geup | do 13 godina", ShortName = "KB-1" },
+                        new { ID = 3, IsFreestyle = false, Name = "Juniori | <=5. geup | 13 do 17 godina", ShortName = "JA-1" },
+                        new { ID = 4, IsFreestyle = false, Name = "Juniorke | <=5. geup | 13 do 17 godina", ShortName = "JB-1" },
+                        new { ID = 5, IsFreestyle = false, Name = "Seniori | <=5. geup | 18 do 30 godina", ShortName = "SA-1" },
+                        new { ID = 6, IsFreestyle = false, Name = "Seniorke | <=5. geup | 18 do 30 godina", ShortName = "SB-1" },
+                        new { ID = 7, IsFreestyle = false, Name = "Veterani | <=5. geup | od 30 godina", ShortName = "MA-1" },
+                        new { ID = 8, IsFreestyle = false, Name = "Veteranke | <=5. geup | od 30 godina", ShortName = "MB-1" },
+                        new { ID = 9, IsFreestyle = false, Name = "Invalidi M | Kognitivni invaliditet", ShortName = "PA-1" },
+                        new { ID = 10, IsFreestyle = false, Name = "Invalidi Ž | Kognitivni invaliditet", ShortName = "PB-1" },
+                        new { ID = 11, IsFreestyle = false, Name = "Parovi | <=5. geup", ShortName = "D-1" },
+                        new { ID = 12, IsFreestyle = false, Name = "Timovi | <=5. geup", ShortName = "T-1" },
+                        new { ID = 13, IsFreestyle = true, Name = "Freestyle M | <=5. geup", ShortName = "FA-1" },
+                        new { ID = 14, IsFreestyle = true, Name = "Freestyle Ž | <=5. geup", ShortName = "FB-1" }
                     );
                 });
 
@@ -285,15 +289,37 @@ namespace TKDLocalWebClient.DAL.Migrations
                     b.Property<string>("Ordinal")
                         .IsRequired();
 
-                    b.Property<string>("ShortName")
-                        .IsRequired();
+                    b.Property<string>("PoomsaeType");
 
-                    b.Property<string>("Type")
+                    b.Property<int>("PoomsaeTypeId");
+
+                    b.Property<string>("ShortName")
                         .IsRequired();
 
                     b.HasKey("ID");
 
+                    b.HasIndex("PoomsaeTypeId");
+
                     b.ToTable("Poomsaes");
+                });
+
+            modelBuilder.Entity("TKDLocalWebClient.Model.PoomsaeType", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("PoomsaeTypes");
+
+                    b.HasData(
+                        new { ID = 1, Name = "Regular" },
+                        new { ID = 2, Name = "Freestyle" },
+                        new { ID = 3, Name = "FourDirections" }
+                    );
                 });
 
             modelBuilder.Entity("TKDLocalWebClient.Model.Score", b =>
@@ -427,34 +453,32 @@ namespace TKDLocalWebClient.DAL.Migrations
             modelBuilder.Entity("TKDLocalWebClient.Model.Category", b =>
                 {
                     b.HasOne("TKDLocalWebClient.Model.Poomsae", "Poomsae11")
-                        .WithMany()
-                        .HasForeignKey("Poomsae11ID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .WithMany("Poomsae11s")
+                        .HasForeignKey("Poomsae11ID");
 
                     b.HasOne("TKDLocalWebClient.Model.Poomsae", "Poomsae12")
-                        .WithMany()
-                        .HasForeignKey("Poomsae12ID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .WithMany("Poomsae12s")
+                        .HasForeignKey("Poomsae12ID");
 
                     b.HasOne("TKDLocalWebClient.Model.Poomsae", "Poomsae21")
-                        .WithMany()
-                        .HasForeignKey("Poomsae21ID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .WithMany("Poomsae21s")
+                        .HasForeignKey("Poomsae21ID");
 
                     b.HasOne("TKDLocalWebClient.Model.Poomsae", "Poomsae22")
-                        .WithMany()
-                        .HasForeignKey("Poomsae22ID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .WithMany("Poomsae22s")
+                        .HasForeignKey("Poomsae22ID");
 
                     b.HasOne("TKDLocalWebClient.Model.Poomsae", "Poomsae31")
-                        .WithMany()
-                        .HasForeignKey("Poomsae31ID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .WithMany("Poomsae31s")
+                        .HasForeignKey("Poomsae31ID");
 
                     b.HasOne("TKDLocalWebClient.Model.Poomsae", "Poomsae32")
-                        .WithMany()
-                        .HasForeignKey("Poomsae32ID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .WithMany("Poomsae32s")
+                        .HasForeignKey("Poomsae32ID");
+
+                    b.HasOne("TKDLocalWebClient.Model.Poomsae")
+                        .WithMany("Categories")
+                        .HasForeignKey("PoomsaeID");
                 });
 
             modelBuilder.Entity("TKDLocalWebClient.Model.Contestant", b =>
@@ -467,6 +491,14 @@ namespace TKDLocalWebClient.DAL.Migrations
                     b.HasOne("TKDLocalWebClient.Model.Team", "Team")
                         .WithMany("Contestants")
                         .HasForeignKey("TeamId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("TKDLocalWebClient.Model.Poomsae", b =>
+                {
+                    b.HasOne("TKDLocalWebClient.Model.PoomsaeType")
+                        .WithMany("Poomsaes")
+                        .HasForeignKey("PoomsaeTypeId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

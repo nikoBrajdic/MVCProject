@@ -48,19 +48,16 @@ namespace TKDLocalWebClient.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Poomsaes",
+                name: "PoomsaeTypes",
                 columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(nullable: false),
-                    ShortName = table.Column<string>(nullable: false),
-                    Ordinal = table.Column<string>(nullable: false),
-                    Type = table.Column<string>(nullable: false)
+                    Name = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Poomsaes", x => x.ID);
+                    table.PrimaryKey("PK_PoomsaeTypes", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -183,6 +180,29 @@ namespace TKDLocalWebClient.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Poomsaes",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(nullable: false),
+                    ShortName = table.Column<string>(nullable: false),
+                    Ordinal = table.Column<string>(nullable: false),
+                    PoomsaeTypeId = table.Column<int>(nullable: false),
+                    PoomsaeType = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Poomsaes", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_Poomsaes_PoomsaeTypes_PoomsaeTypeId",
+                        column: x => x.PoomsaeTypeId,
+                        principalTable: "PoomsaeTypes",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Categories",
                 columns: table => new
                 {
@@ -192,12 +212,13 @@ namespace TKDLocalWebClient.DAL.Migrations
                     ShortName = table.Column<string>(nullable: false),
                     IsFreestyle = table.Column<bool>(nullable: false),
                     CurrentRound = table.Column<int>(nullable: true),
-                    Poomsae11ID = table.Column<int>(nullable: false),
-                    Poomsae12ID = table.Column<int>(nullable: false),
-                    Poomsae21ID = table.Column<int>(nullable: false),
-                    Poomsae22ID = table.Column<int>(nullable: false),
-                    Poomsae31ID = table.Column<int>(nullable: false),
-                    Poomsae32ID = table.Column<int>(nullable: false)
+                    Poomsae11ID = table.Column<int>(nullable: true),
+                    Poomsae12ID = table.Column<int>(nullable: true),
+                    Poomsae21ID = table.Column<int>(nullable: true),
+                    Poomsae22ID = table.Column<int>(nullable: true),
+                    Poomsae31ID = table.Column<int>(nullable: true),
+                    Poomsae32ID = table.Column<int>(nullable: true),
+                    PoomsaeID = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -207,37 +228,43 @@ namespace TKDLocalWebClient.DAL.Migrations
                         column: x => x.Poomsae11ID,
                         principalTable: "Poomsaes",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Categories_Poomsaes_Poomsae12ID",
                         column: x => x.Poomsae12ID,
                         principalTable: "Poomsaes",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Categories_Poomsaes_Poomsae21ID",
                         column: x => x.Poomsae21ID,
                         principalTable: "Poomsaes",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Categories_Poomsaes_Poomsae22ID",
                         column: x => x.Poomsae22ID,
                         principalTable: "Poomsaes",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Categories_Poomsaes_Poomsae31ID",
                         column: x => x.Poomsae31ID,
                         principalTable: "Poomsaes",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Categories_Poomsaes_Poomsae32ID",
                         column: x => x.Poomsae32ID,
                         principalTable: "Poomsaes",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Categories_Poomsaes_PoomsaeID",
+                        column: x => x.PoomsaeID,
+                        principalTable: "Poomsaes",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -317,23 +344,33 @@ namespace TKDLocalWebClient.DAL.Migrations
 
             migrationBuilder.InsertData(
                 table: "Categories",
-                columns: new[] { "ID", "CurrentRound", "IsFreestyle", "Name", "Poomsae11ID", "Poomsae12ID", "Poomsae21ID", "Poomsae22ID", "Poomsae31ID", "Poomsae32ID", "ShortName" },
+                columns: new[] { "ID", "CurrentRound", "IsFreestyle", "Name", "Poomsae11ID", "Poomsae12ID", "Poomsae21ID", "Poomsae22ID", "Poomsae31ID", "Poomsae32ID", "PoomsaeID", "ShortName" },
                 values: new object[,]
                 {
-                    { 1, null, false, "Kadeti | <=5. geup | do 13 godina", 0, 0, 0, 0, 0, 0, "KA-1" },
-                    { 2, null, false, "Kadetkinje | <=5. geup | do 13 godina", 0, 0, 0, 0, 0, 0, "KB-1" },
-                    { 3, null, false, "Juniori | <=5. geup | 13 do 17 godina", 0, 0, 0, 0, 0, 0, "JA-1" },
-                    { 4, null, false, "Juniorke | <=5. geup | 13 do 17 godina", 0, 0, 0, 0, 0, 0, "JB-1" },
-                    { 5, null, false, "Seniori | <=5. geup | 18 do 30 godina", 0, 0, 0, 0, 0, 0, "SA-1" },
-                    { 6, null, false, "Seniorke | <=5. geup | 18 do 30 godina", 0, 0, 0, 0, 0, 0, "SB-1" },
-                    { 7, null, false, "Veterani | <=5. geup | od 30 godina", 0, 0, 0, 0, 0, 0, "MA-1" },
-                    { 8, null, false, "Veteranke | <=5. geup | od 30 godina", 0, 0, 0, 0, 0, 0, "MB-1" },
-                    { 9, null, false, "Invalidi M | Kognitivni invaliditet", 0, 0, 0, 0, 0, 0, "PA-1" },
-                    { 10, null, false, "Invalidi Ž | Kognitivni invaliditet", 0, 0, 0, 0, 0, 0, "PB-1" },
-                    { 11, null, false, "Parovi | <=5. geup", 0, 0, 0, 0, 0, 0, "D-1" },
-                    { 12, null, false, "Timovi | <=5. geup", 0, 0, 0, 0, 0, 0, "T-1" },
-                    { 13, null, true, "Freestyle M | <=5. geup", 0, 0, 0, 0, 0, 0, "FA-1" },
-                    { 14, null, true, "Freestyle Ž | <=5. geup", 0, 0, 0, 0, 0, 0, "FB-1" }
+                    { 1, null, false, "Kadeti | <=5. geup | do 13 godina", null, null, null, null, null, null, null, "KA-1" },
+                    { 14, null, true, "Freestyle Ž | <=5. geup", null, null, null, null, null, null, null, "FB-1" },
+                    { 13, null, true, "Freestyle M | <=5. geup", null, null, null, null, null, null, null, "FA-1" },
+                    { 12, null, false, "Timovi | <=5. geup", null, null, null, null, null, null, null, "T-1" },
+                    { 11, null, false, "Parovi | <=5. geup", null, null, null, null, null, null, null, "D-1" },
+                    { 10, null, false, "Invalidi Ž | Kognitivni invaliditet", null, null, null, null, null, null, null, "PB-1" },
+                    { 8, null, false, "Veteranke | <=5. geup | od 30 godina", null, null, null, null, null, null, null, "MB-1" },
+                    { 9, null, false, "Invalidi M | Kognitivni invaliditet", null, null, null, null, null, null, null, "PA-1" },
+                    { 6, null, false, "Seniorke | <=5. geup | 18 do 30 godina", null, null, null, null, null, null, null, "SB-1" },
+                    { 5, null, false, "Seniori | <=5. geup | 18 do 30 godina", null, null, null, null, null, null, null, "SA-1" },
+                    { 4, null, false, "Juniorke | <=5. geup | 13 do 17 godina", null, null, null, null, null, null, null, "JB-1" },
+                    { 3, null, false, "Juniori | <=5. geup | 13 do 17 godina", null, null, null, null, null, null, null, "JA-1" },
+                    { 2, null, false, "Kadetkinje | <=5. geup | do 13 godina", null, null, null, null, null, null, null, "KB-1" },
+                    { 7, null, false, "Veterani | <=5. geup | od 30 godina", null, null, null, null, null, null, null, "MA-1" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "PoomsaeTypes",
+                columns: new[] { "ID", "Name" },
+                values: new object[,]
+                {
+                    { 2, "Freestyle" },
+                    { 1, "Regular" },
+                    { 3, "FourDirections" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -406,6 +443,11 @@ namespace TKDLocalWebClient.DAL.Migrations
                 column: "Poomsae32ID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Categories_PoomsaeID",
+                table: "Categories",
+                column: "PoomsaeID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Contestants_CategoryId",
                 table: "Contestants",
                 column: "CategoryId");
@@ -414,6 +456,11 @@ namespace TKDLocalWebClient.DAL.Migrations
                 name: "IX_Contestants_TeamId",
                 table: "Contestants",
                 column: "TeamId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Poomsaes_PoomsaeTypeId",
+                table: "Poomsaes",
+                column: "PoomsaeTypeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Scores_ContestantId",
@@ -458,6 +505,9 @@ namespace TKDLocalWebClient.DAL.Migrations
 
             migrationBuilder.DropTable(
                 name: "Poomsaes");
+
+            migrationBuilder.DropTable(
+                name: "PoomsaeTypes");
         }
     }
 }
