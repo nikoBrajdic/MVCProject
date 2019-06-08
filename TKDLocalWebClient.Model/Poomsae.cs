@@ -18,25 +18,26 @@ namespace TKDLocalWebClient.Model
 
         [ForeignKey(nameof(PoomsaeType))]
         public int PoomsaeTypeId { get; set; }
+        public string PoomsaeType { get; set; }
 
         public virtual ICollection<Category> Categories { get; set; }
 
         [InverseProperty(nameof(Category.Poomsae11))]
-        public virtual ICollection<Poomsae> Poomsae11s { get; set; }
+        public virtual ICollection<Category> Poomsae11s { get; set; }
 
         [InverseProperty(nameof(Category.Poomsae12))]
-        public virtual ICollection<Poomsae> Poomsae12s { get; set; }
+        public virtual ICollection<Category> Poomsae12s { get; set; }
 
         [InverseProperty(nameof(Category.Poomsae21))]
-        public virtual ICollection<Poomsae> Poomsae21s { get; set; }
+        public virtual ICollection<Category> Poomsae21s { get; set; }
 
         [InverseProperty(nameof(Category.Poomsae22))]
-        public virtual ICollection<Poomsae> Poomsae22s { get; set; }
+        public virtual ICollection<Category> Poomsae22s { get; set; }
 
         [InverseProperty(nameof(Category.Poomsae31))]
-        public virtual ICollection<Poomsae> Poomsae31s { get; set; }
+        public virtual ICollection<Category> Poomsae31s { get; set; }
 
         [InverseProperty(nameof(Category.Poomsae32))]
-        public virtual ICollection<Poomsae> Poomsae32s { get; set; }
+        public virtual ICollection<Category> Poomsae32s { get; set; }
     }
 }
