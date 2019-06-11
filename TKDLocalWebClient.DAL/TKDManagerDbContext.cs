@@ -35,18 +35,31 @@ namespace TKDLocalWebClient.DAL
             modelBuilder.Entity<Category>().HasOne(c => c.Poomsae22).WithMany(p => p.Poomsae22s).OnDelete(DeleteBehavior.ClientSetNull);
             modelBuilder.Entity<Category>().HasOne(c => c.Poomsae31).WithMany(p => p.Poomsae31s).OnDelete(DeleteBehavior.ClientSetNull);
             modelBuilder.Entity<Category>().HasOne(c => c.Poomsae32).WithMany(p => p.Poomsae32s).OnDelete(DeleteBehavior.ClientSetNull);
-/*            modelBuilder.Entity<Poomsae>().HasMany(p => p.Poomsae11s).WithOne(c => c.Poomsae11).HasForeignKey(c => c.Poomsae11ID).OnDelete(DeleteBehavior.ClientSetNull);
-            modelBuilder.Entity<Poomsae>().HasMany(p => p.Poomsae12s).WithOne(c => c.Poomsae12).HasForeignKey(c => c.Poomsae12ID).OnDelete(DeleteBehavior.ClientSetNull);
-            modelBuilder.Entity<Poomsae>().HasMany(p => p.Poomsae21s).WithOne(c => c.Poomsae21).HasForeignKey(c => c.Poomsae21ID).OnDelete(DeleteBehavior.ClientSetNull);
-            modelBuilder.Entity<Poomsae>().HasMany(p => p.Poomsae22s).WithOne(c => c.Poomsae22).HasForeignKey(c => c.Poomsae22ID).OnDelete(DeleteBehavior.ClientSetNull);
-            modelBuilder.Entity<Poomsae>().HasMany(p => p.Poomsae31s).WithOne(c => c.Poomsae31).HasForeignKey(c => c.Poomsae31ID).OnDelete(DeleteBehavior.ClientSetNull);
-            modelBuilder.Entity<Poomsae>().HasMany(p => p.Poomsae32s).WithOne(c => c.Poomsae32).HasForeignKey(c => c.Poomsae32ID).OnDelete(DeleteBehavior.ClientSetNull);
-*/
+
             modelBuilder.Entity<PoomsaeType>().HasData(new PoomsaeType[]
             {
-                new PoomsaeType{ ID = 1, Name = "Regular" },
-                new PoomsaeType{ ID = 2, Name = "Freestyle" },
-                new PoomsaeType{ ID = 3, Name = "FourDirections" },
+                new PoomsaeType { ID = 1, Name = "Regular" },
+                new PoomsaeType { ID = 2, Name = "Freestyle" },
+                new PoomsaeType { ID = 3, Name = "FourDirections" },
+            });
+            modelBuilder.Entity<Poomsae>().HasData(new Poomsae[] {
+                new Poomsae { ID = 1, Name = "Taeguk Il Jang", ShortName = "Il-Jang", Ordinal = "1", PoomsaeTypeId = 1 },
+                new Poomsae { ID = 2, Name = "Taeguk I Jang", ShortName = "I-Jang", Ordinal = "2", PoomsaeTypeId = 2 },
+                new Poomsae { ID = 3, Name = "Taeguk Sam Jang", ShortName = "Sam-Jang", Ordinal = "3", PoomsaeTypeId = 3 },
+                new Poomsae { ID = 4, Name = "Taeguk Sa Jang", ShortName = "Sa-Jang", Ordinal = "4", PoomsaeTypeId = 4 },
+                new Poomsae { ID = 5, Name = "Taeguk O Jang", ShortName = "O-Jang", Ordinal = "5", PoomsaeTypeId = 5 },
+                new Poomsae { ID = 6, Name = "Taeguk Yuk Jang", ShortName = "Yuk-Jang", Ordinal = "6", PoomsaeTypeId = 6 },
+                new Poomsae { ID = 7, Name = "Taeguk Chil Jang", ShortName = "Chil-Jang", Ordinal = "7", PoomsaeTypeId = 7 },
+                new Poomsae { ID = 8, Name = "Taeguk Pal Jang", ShortName = "Pal-Jang", Ordinal = "8", PoomsaeTypeId = 8 },
+                new Poomsae { ID = 9, Name = "Koryo", ShortName = "Koryo", Ordinal = "9", PoomsaeTypeId = 9 },
+                new Poomsae { ID = 10, Name = "Keumgang", ShortName = "Keumgang", Ordinal = "10", PoomsaeTypeId = 10 },
+                new Poomsae { ID = 11, Name = "Taebaek", ShortName = "Taebaek", Ordinal = "11", PoomsaeTypeId = 11 },
+                new Poomsae { ID = 12, Name = "Pyongwon", ShortName = "Pyongwon", Ordinal = "12", PoomsaeTypeId = 12 },
+                new Poomsae { ID = 13, Name = "Sipjin", ShortName = "Sipjin", Ordinal = "13", PoomsaeTypeId = 13 },
+                new Poomsae { ID = 14, Name = "Jitae", ShortName = "Jitae", Ordinal = "14", PoomsaeTypeId = 14 },
+                new Poomsae { ID = 15, Name = "Chonkwon", ShortName = "Chonkwon", Ordinal = "15", PoomsaeTypeId = 15 },
+                new Poomsae { ID = 16, Name = "Hansoo", ShortName = "Hansoo", Ordinal = "16", PoomsaeTypeId = 16 },
+                new Poomsae { ID = 17, Name = "Ilyo", ShortName = "Ilyo", Ordinal = "17", PoomsaeTypeId = 17 },
             });
             modelBuilder.Entity<Category>().HasData(new Category[] 
             {
@@ -65,6 +78,8 @@ namespace TKDLocalWebClient.DAL
                 new Category { ID = 13, Name = @"Freestyle M | <=5. geup", ShortName = @"FA-1", IsFreestyle = true },
                 new Category { ID = 14, Name = @"Freestyle Ž | <=5. geup", ShortName = @"FB-1", IsFreestyle = true }
             });
+            modelBuilder.Entity<Team>().HasData(new Team { ID = 1, Name = "TKD Klub Jastreb" });
+            modelBuilder.Entity<Contestant>().HasData(new Contestant { ID = 1, Name = "Niko", Surname = "Brajdić", TeamId = 1, CategoryId = 5 });
         }
     }
 }

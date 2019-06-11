@@ -1,0 +1,33 @@
+﻿@using TKDLocalWebClient.Web.Models;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<div style="margin-top: 20px;">
+    <partial name="Filter" model="new CategoryFilterModel()" />
+</div>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<partial name="IndexPartial" />
+
+@section Scripts{
+    <script type="text/javascript">
+        function performSearch(sender){
+            var formValues = $(sender).closest('form').serialize();
+
+            $.ajax({
+                url: '@Url.Action("IndexAjax", "Categories")',
+                data: formValues,
+                method: "POST",
+                success: function (html) {
+                    $(".table").replaceWith(html);
+                }
+
+            })
+        }
+    </script>
+}

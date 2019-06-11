@@ -10,16 +10,20 @@ using TKDLocalWebClient.Model;
 
 namespace TKDLocalWebClient.Web.Controllers
 {
-    public class ContestantsController : Controller
+    [Route("[controller]")]
+    [Route("natjecatelji")]
+    public class ContestantController : Controller
     {
         private readonly TKDManagerDbContext Context;
 
-        public ContestantsController(TKDManagerDbContext Context)
+        public ContestantController(TKDManagerDbContext Context)
         {
             this.Context = Context;
         }
 
         // GET: Contestants
+        [Route("[action]")]
+        [Route("{[action]:regex(^(Pocetna|Inde(ks|x).*)?$)}")]
         public async Task<IActionResult> Index()
         {
             var tKDManagerDbContext = Context.Contestants.Include(c => c.Category).Include(c => c.Team);
@@ -27,6 +31,8 @@ namespace TKDLocalWebClient.Web.Controllers
         }
 
         // GET: Contestants/Details/5
+        [Route("[action]")]
+        [Route("{[action]:regex(^(Pregled|Deta(lji|ils))$)}/{id}")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -47,6 +53,8 @@ namespace TKDLocalWebClient.Web.Controllers
         }
 
         // GET: Contestants/Create
+        [Route("[action]")]
+        [Route("{[action]:regex(^(Kreiraj|Novi|Create)$)}")]
         public IActionResult Create()
         {
             ViewData["CategoryId"] = new SelectList(Context.Categories, "ID", "Name");
@@ -59,7 +67,9 @@ namespace TKDLocalWebClient.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name,Surname,TrackPath,TeamId,CategoryId")] Contestant contestant)
+        [Route("[action]")]
+        [Route("{[action]:regex(^(Kreiraj|Novi|Create)$)}")]
+        public async Task<IActionResult> Create([Bind("Name,Surname,TrackPath,TeamId,CategoryId")] Contestant contestant)
         {
             if (ModelState.IsValid)
             {
@@ -73,6 +83,8 @@ namespace TKDLocalWebClient.Web.Controllers
         }
 
         // GET: Contestants/Edit/5
+        [Route("[action]")]
+        [Route("{[action]:regex(^(Uredi|Edit(iraj))$)}/{id}")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -95,6 +107,8 @@ namespace TKDLocalWebClient.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route("[action]")]
+        [Route("{[action]:regex(^(Uredi|Edit(iraj))$)}/{id}")]
         public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Surname,TrackPath,TeamId,CategoryId")] Contestant contestant)
         {
             if (id != contestant.ID)
@@ -128,6 +142,8 @@ namespace TKDLocalWebClient.Web.Controllers
         }
 
         // GET: Contestants/Delete/5
+        [Route("[action]")]
+        [Route("{[action]:regex(^(Izbrisi|Delete)$)}/{id}")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -150,6 +166,8 @@ namespace TKDLocalWebClient.Web.Controllers
         // POST: Contestants/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Route("[action]")]
+        [Route("{[action]:regex(^(Izbrisi|Delete)$)}/{id}")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var contestant = await Context.Contestants.FindAsync(id);

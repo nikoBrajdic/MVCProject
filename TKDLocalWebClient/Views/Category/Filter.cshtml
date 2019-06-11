@@ -1,0 +1,15 @@
+﻿@using TKDLocalWebClient.Web.Models
+@model CategoryFilterModel
+
+<form asp-action="AdvancedSearch" method="post" class="form-inline">
+    <div class="form-group">
+        <input asp-for="Name" class="form-control" type="text" placeholder="Category name" />
+    </div>
+    <div class="form-group">
+        <input asp-for="ShortName" class="form-control" type="text" placeholder="Short name" />
+    </div>
+    <div class="form-group">
+        <label asp-for="IsFreestyle" style="padding-right: 15px">Is it freestyle? </label><input asp-for="IsFreestyle" class="form-control" type="checkbox" />
+    </div>
+    <button type="button" class="btn btn-default" onclick="performSearch(this)">Search</button>
+</form>

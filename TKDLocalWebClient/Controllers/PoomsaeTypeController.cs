@@ -10,22 +10,28 @@ using TKDLocalWebClient.Model;
 
 namespace TKDLocalWebClient.Web.Controllers
 {
-    public class PoomsaeTypesController : Controller
+    [Route("[controller]")]
+    [Route("forme_tipovi")]
+    public class PoomsaeTypeController : Controller
     {
         private readonly TKDManagerDbContext _context;
 
-        public PoomsaeTypesController(TKDManagerDbContext context)
+        public PoomsaeTypeController(TKDManagerDbContext context)
         {
             _context = context;
         }
 
         // GET: PoomsaeTypes
+        [Route("[action]")]
+        [Route("{[action]:regex(^(Pocetna|Inde(ks|x).*)?$)}")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.PoomsaeTypes.ToListAsync());
         }
 
         // GET: PoomsaeTypes/Details/5
+        [Route("[action]")]
+        [Route("{[action]:regex(^(Pregled|Deta(lji|ils))$)}/{id}")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -44,6 +50,8 @@ namespace TKDLocalWebClient.Web.Controllers
         }
 
         // GET: PoomsaeTypes/Create
+        [Route("[action]")]
+        [Route("{[action]:regex(^(Kreiraj|Novi|Create)$)}")]
         public IActionResult Create()
         {
             return View();
@@ -54,7 +62,9 @@ namespace TKDLocalWebClient.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name")] PoomsaeType poomsaeType)
+        [Route("[action]")]
+        [Route("{[action]:regex(^(Kreiraj|Novi|Create)$)}")]
+        public async Task<IActionResult> Create([Bind("Name")] PoomsaeType poomsaeType)
         {
             if (ModelState.IsValid)
             {
@@ -66,6 +76,8 @@ namespace TKDLocalWebClient.Web.Controllers
         }
 
         // GET: PoomsaeTypes/Edit/5
+        [Route("[action]")]
+        [Route("{[action]:regex(^(Uredi|Edit(iraj))$)}/{id}")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -86,6 +98,8 @@ namespace TKDLocalWebClient.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route("[action]")]
+        [Route("{[action]:regex(^(Uredi|Edit(iraj))$)}/{id}")]
         public async Task<IActionResult> Edit(int id, [Bind("ID,Name")] PoomsaeType poomsaeType)
         {
             if (id != poomsaeType.ID)
@@ -117,6 +131,8 @@ namespace TKDLocalWebClient.Web.Controllers
         }
 
         // GET: PoomsaeTypes/Delete/5
+        [Route("[action]")]
+        [Route("{[action]:regex(^(Izbrisi|Delete)$)}/{id}")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -137,6 +153,8 @@ namespace TKDLocalWebClient.Web.Controllers
         // POST: PoomsaeTypes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Route("[action]")]
+        [Route("{[action]:regex(^(Izbrisi|Delete)$)}/{id}")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var poomsaeType = await _context.PoomsaeTypes.FindAsync(id);
