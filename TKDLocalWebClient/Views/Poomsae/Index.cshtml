@@ -41,7 +41,7 @@
                 @Html.DisplayFor(modelItem => item.Ordinal)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PoomsaeType)
+                @Html.DisplayFor(modelItem => item.PoomsaeType.Name)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |

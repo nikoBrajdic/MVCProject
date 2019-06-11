@@ -26,7 +26,7 @@ namespace TKDLocalWebClient.Web.Controllers
         [Route("{[action]:regex(^(Pocetna|Inde(ks|x).*)?$)}")]
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Poomsaes.ToListAsync());
+            return View(await _context.Poomsaes.Include(p => p.PoomsaeType).ToListAsync());
         }
 
         // GET: Poomsaes/Details/5

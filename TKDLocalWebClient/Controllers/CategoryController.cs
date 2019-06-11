@@ -9,6 +9,10 @@ using TKDLocalWebClient.DAL;
 using TKDLocalWebClient.Model;
 using TKDLocalWebClient.Web.Models;
 
+//
+// Iz nekog razloga Attribute routing i Fluent API routing ne rade zajedno
+//
+
 namespace TKDLocalWebClient.Web.Controllers
 {
     //[Route("[controller]")]
